@@ -8,22 +8,32 @@
 import SwiftUI
 import RealityKit
 import RealityKitContent
+import PianoKeyboard
 
 struct ContentView: View {
-
     @State private var showImmersiveSpace = false
     @State private var immersiveSpaceIsShown = false
-
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-
+    
+    @ObservedObject private var pianoKeyboardViewModel: PianoKeyboardViewModel
+    private let audioEngine: AudioEngine
+    
+    init(
+        pianoKeyboardViewModel: PianoKeyboardViewModel = PianoKeyboardViewModel(),
+        audioEngine: AudioEngine = AudioEngine(soundFontFile: "soundfont")
+    ) {
+        self.pianoKeyboardViewModel = pianoKeyboardViewModel
+        self.audioEngine = audioEngine
+        
+        pianoKeyboardViewModel.showLabels = true
+        pianoKeyboardViewModel.numberOfKeys = 84
+        pianoKeyboardViewModel.noteOffset = 24
+    }
     var body: some View {
         VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
-
-            Text("Hello, world!")
-
+            PianoKeyboardView(viewModel: pianoKeyboardViewModel, style: ClassicStyle(sfKeyWidthMultiplier: 0.55))
+                .frame(height: 400)
             Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
                 .font(.title)
                 .frame(width: 360)
@@ -48,6 +58,10 @@ struct ContentView: View {
                     immersiveSpaceIsShown = false
                 }
             }
+        }
+        .onAppear() {
+            pianoKeyboardViewModel.delegate = audioEngine
+            audioEngine.start()
         }
     }
 }

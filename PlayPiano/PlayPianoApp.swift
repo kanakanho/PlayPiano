@@ -13,7 +13,8 @@ struct PlayPianoApp: App {
         WindowGroup {
             ContentView()
         }
-
+        .defaultSize(CGSize(width: 3000, height: 500))
+        
         ImmersiveSpace(id: "ImmersiveSpace") {
             ImmersiveView()
         }

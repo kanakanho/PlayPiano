@@ -13,6 +13,11 @@
 		EBC72E892C67701800469F48 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC72E882C67701800469F48 /* ImmersiveView.swift */; };
 		EBC72E8B2C67701900469F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC72E8A2C67701900469F48 /* Assets.xcassets */; };
 		EBC72E8E2C67701900469F48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC72E8D2C67701900469F48 /* Preview Assets.xcassets */; };
+		EBC72E972C67702600469F48 /* PianoKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = EBC72E962C67702600469F48 /* PianoKeyboard */; };
+		EBC72E9A2C6770F600469F48 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC72E992C6770F600469F48 /* AudioEngine.swift */; };
+		EBC72E9C2C67713800469F48 /* soundfont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EBC72E9B2C67713800469F48 /* soundfont.sf2 */; };
+		EBC72E9F2C67950700469F48 /* PianoKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = EBC72E9E2C67950700469F48 /* PianoKeyboard */; };
+		EBC72EA22C6795C500469F48 /* PianoKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = EBC72EA12C6795C500469F48 /* PianoKeyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,8 @@
 		EBC72E8A2C67701900469F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBC72E8D2C67701900469F48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBC72E8F2C67701900469F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC72E992C6770F600469F48 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		EBC72E9B2C67713800469F48 /* soundfont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundfont.sf2; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC72E832C67701800469F48 /* RealityKitContent in Frameworks */,
+				EBC72EA22C6795C500469F48 /* PianoKeyboard in Frameworks */,
+				EBC72E9F2C67950700469F48 /* PianoKeyboard in Frameworks */,
+				EBC72E972C67702600469F48 /* PianoKeyboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +68,10 @@
 		EBC72E7F2C67701800469F48 /* PlayPiano */ = {
 			isa = PBXGroup;
 			children = (
+				EBC72E9B2C67713800469F48 /* soundfont.sf2 */,
 				EBC72E842C67701800469F48 /* PlayPianoApp.swift */,
 				EBC72E862C67701800469F48 /* ContentView.swift */,
+				EBC72E992C6770F600469F48 /* AudioEngine.swift */,
 				EBC72E882C67701800469F48 /* ImmersiveView.swift */,
 				EBC72E8A2C67701900469F48 /* Assets.xcassets */,
 				EBC72E8F2C67701900469F48 /* Info.plist */,
@@ -102,6 +114,9 @@
 			name = PlayPiano;
 			packageProductDependencies = (
 				EBC72E822C67701800469F48 /* RealityKitContent */,
+				EBC72E962C67702600469F48 /* PianoKeyboard */,
+				EBC72E9E2C67950700469F48 /* PianoKeyboard */,
+				EBC72EA12C6795C500469F48 /* PianoKeyboard */,
 			);
 			productName = PlayPiano;
 			productReference = EBC72E7D2C67701800469F48 /* PlayPiano.app */;
@@ -131,6 +146,9 @@
 				Base,
 			);
 			mainGroup = EBC72E742C67701800469F48;
+			packageReferences = (
+				EBC72EA02C6795C500469F48 /* XCRemoteSwiftPackageReference "PianoKeyboard" */,
+			);
 			productRefGroup = EBC72E7E2C67701800469F48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC72E8E2C67701900469F48 /* Preview Assets.xcassets in Resources */,
+				EBC72E9C2C67713800469F48 /* soundfont.sf2 in Resources */,
 				EBC72E8B2C67701900469F48 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC72E9A2C6770F600469F48 /* AudioEngine.swift in Sources */,
 				EBC72E872C67701800469F48 /* ContentView.swift in Sources */,
 				EBC72E852C67701800469F48 /* PlayPianoApp.swift in Sources */,
 				EBC72E892C67701800469F48 /* ImmersiveView.swift in Sources */,
@@ -297,6 +317,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PlayPiano;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +344,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = PlayPiano;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,10 +382,34 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		EBC72EA02C6795C500469F48 /* XCRemoteSwiftPackageReference "PianoKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/garynewby/PianoKeyboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		EBC72E822C67701800469F48 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		EBC72E962C67702600469F48 /* PianoKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PianoKeyboard;
+		};
+		EBC72E9E2C67950700469F48 /* PianoKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PianoKeyboard;
+		};
+		EBC72EA12C6795C500469F48 /* PianoKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBC72EA02C6795C500469F48 /* XCRemoteSwiftPackageReference "PianoKeyboard" */;
+			productName = PianoKeyboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

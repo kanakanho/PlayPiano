@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "pianokeyboard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/garynewby/PianoKeyboard.git",
+      "state" : {
+        "revision" : "70a9ca859d7d104dcc586268159ef83160c4d764",
+        "version" : "1.2.3"
+      }
+    }
+  ],
+  "version" : 2
+}
